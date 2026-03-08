@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cassiano Kummer · Portfólio Educação & Tecnologia</title>
+    <!-- Fonte moderna e limpa -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..700&display=swap" rel="stylesheet">
+    <!-- Ícones minimalistas -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f6f9fc;
+            font-family: "Inter", system-ui, -apple-system, sans-serif;
+            color: #1e293b;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        header {
+            padding: 2rem 0 0.5rem 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            backdrop-filter: blur(2px);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-weight: 600;
+            font-size: 1.6rem;
+            letter-spacing: -0.02em;
+            background: linear-gradient(135deg, #0f2b3d, #2563eb);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            font-weight: 500;
+            color: #334155;
+            transition: color 0.2s;
+            font-size: 1rem;
+            border-bottom: 2px solid transparent;
+            padding-bottom: 4px;
+        }
+
+        .nav-links a:hover {
+            color: #2563eb;
+            border-bottom-color: #2563eb;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            border-radius: 2rem;
+            box-shadow: 0 20px 35px -8px rgba(0, 20, 40, 0.15), 0 0 0 1px rgba(255,255,255,0.5) inset;
+        }
+
+        .hero {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+            margin: 3rem 0 4rem 0;
+            flex-wrap: wrap;
+        }
+
+        .profile-pic {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid white;
+            box-shadow: 0 20px 30px -10px rgba(37, 99, 235, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .profile-pic:hover {
+            transform: scale(1.02);
+        }
+
+        .hero-text h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+            background: linear-gradient(145deg, #1e293b, #2563eb);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero-text p {
+            font-size: 1.2rem;
+            color: #475569;
+            max-width: 600px;
+        }
+
+        .badge-tech {
+            display: inline-block;
+            background: rgba(37, 99, 235, 0.1);
+            color: #2563eb;
+            padding: 0.3rem 1rem;
+            border-radius: 40px;
+            font-weight: 500;
+            font-size: 0.9rem;
+            margin-top: 1rem;
+            border: 1px solid rgba(37, 99, 235, 0.2);
+            backdrop-filter: blur(4px);
+        }
+
+        section {
+            margin: 5rem 0;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            margin-bottom: 2.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .section-title i {
+            color: #2563eb;
+            font-size: 2rem;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .info-item {
+            background: white;
+            padding: 1.5rem 2rem;
+            border-radius: 1.5rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.02);
+            border: 1px solid #e9eef3;
+            transition: all 0.2s;
+        }
+
+        .info-item:hover {
+            border-color: #b3d0ff;
+            box-shadow: 0 15px 25px -10px rgba(37,99,235,0.1);
+        }
+
+        .info-item h3 {
+            font-weight: 600;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: #0f2b3d;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .info-item .company-logo {
+            width: 24px;
+            height: 24px;
+            background: #eef2f6;
+            border-radius: 6px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            color: #2563eb;
+        }
+
+        .info-item p, .info-item li {
+            color: #334155;
+        }
+
+        .info-item ul {
+            list-style: none;
+        }
+
+        .info-item li {
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+        }
+
+        .info-item i {
+            color: #2563eb;
+            width: 1.5rem;
+            margin-top: 0.2rem;
+        }
+
+        .job-period {
+            font-size: 0.85rem;
+            color: #64748b;
+            display: block;
+            margin-top: 0.2rem;
+        }
+
+        .competences {
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+            color: #2563eb;
+            background: #eef6ff;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            display: inline-block;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 1.8rem;
+            padding: 1.8rem 1.5rem;
+            border: 1px solid #eef2f6;
+            transition: all 0.25s;
+            box-shadow: 0 10px 15px -12px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-card:hover {
+            transform: translateY(-6px);
+            border-color: #c7d9ff;
+            box-shadow: 0 25px 30px -12px rgba(37,99,235,0.15);
+        }
+
+        .project-icon {
+            font-size: 2.2rem;
+            color: #2563eb;
+            margin-bottom: 1rem;
+        }
+
+        .project-card h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-card p {
+            color: #475569;
+            margin: 0.5rem 0 1.5rem 0;
+            flex: 1;
+        }
+
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 1rem 0 1.2rem;
+        }
+
+        .tech-tag {
+            background: #eef6ff;
+            color: #1e4a8b;
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 0.3rem 0.8rem;
+            border-radius: 30px;
+            letter-spacing: 0.01em;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.8rem;
+            border-radius: 60px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-decoration: none;
+            background: white;
+            color: #1e293b;
+            border: 1.5px solid #dde3e9;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.02);
+        }
+
+        .btn-primary {
+            background: #1e293b;
+            color: white;
+            border: 1.5px solid #1e293b;
+            box-shadow: 0 8px 18px -8px rgba(30, 41, 59, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: #2563eb;
+            border-color: #2563eb;
+            transform: translateY(-3px);
+            box-shadow: 0 15px 20px -8px #2563eb80;
+        }
+
+        .btn-outline:hover {
+            background: #f0f7ff;
+            border-color: #2563eb;
+            transform: scale(1.02);
+        }
+
+        .btn i {
+            font-size: 1rem;
+        }
+
+        .project-card .btn {
+            margin-top: 0.8rem;
+            align-self: flex-start;
+            padding: 0.6rem 1.5rem;
+        }
+
+        .contact-form {
+            background: white;
+            border-radius: 2.5rem;
+            padding: 2.8rem;
+            border: 1px solid #eef2f6;
+            box-shadow: 0 30px 40px -20px rgba(0,20,40,0.15);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            color: #1e293b;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 1rem 1.2rem;
+            border: 1.5px solid #e2e8f0;
+            border-radius: 1.5rem;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            transition: all 0.2s;
+            background: #fafdff;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: #2563eb;
+            box-shadow: 0 0 0 4px rgba(37,99,235,0.1);
+            background: white;
+        }
+
+        textarea.form-control {
+            min-height: 140px;
+            resize: vertical;
+        }
+
+        .btn-submit {
+            background: #1e293b;
+            color: white;
+            border: none;
+            padding: 1rem 2.8rem;
+            border-radius: 3rem;
+            font-weight: 600;
+            font-size: 1.1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            cursor: pointer;
+            transition: 0.2s;
+            border: 1px solid #1e293b;
+            box-shadow: 0 10px 15px -7px #1e293b70;
+        }
+
+        .btn-submit:hover {
+            background: #2563eb;
+            border-color: #2563eb;
+            transform: translateY(-3px);
+            box-shadow: 0 20px 20px -8px #2563eb;
+        }
+
+        .footer {
+            padding: 2.5rem 0;
+            border-top: 1px solid rgba(0,0,0,0.05);
+            margin-top: 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            color: #64748b;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .social-links a {
+            color: #334155;
+            font-size: 1.4rem;
+            transition: 0.2s;
+        }
+
+        .social-links a:hover {
+            color: #2563eb;
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 700px) {
+            .hero { flex-direction: column; text-align: center; }
+            .info-grid { grid-template-columns: 1fr; }
+            .form-row { grid-template-columns: 1fr; }
+            .header-content { flex-direction: column; gap: 1rem; }
+            .nav-links { gap: 1.5rem; flex-wrap: wrap; justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <span class="logo">⌨️ cassiano.kummer</span>
+            <div class="nav-links">
+                <a href="#trajetoria">trajetória</a>
+                <a href="#projetos">projetos</a>
+                <a href="#contato">contato</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- HERO com foto -->
+        <div class="hero">
+<img src="https://ui-avatars.com/api/?background=2563eb&color=fff&size=140&name=Cassiano+Kummer&bold=true&length=2&font-size=0.50&rounded=true" 
+     alt="Cassiano Kummer" 
+     class="profile-pic"
+     style="background: #e0f2fe;">
+            <div class="hero-text">
+                <h1>Cassiano Kummer</h1>
+                <p>Professor efetivo estadual (Informação e Comunicação) · Professor efetivo municipal (Informática Pedagógica)</p>
+                <span class="badge-tech"><i class="fa-solid fa-code"></i> Sistemas de Informação · Metodologias Ágeis · Linux · Windows Server</span>
+                <div style="margin-top: 2rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+                    <a href="#projetos" class="btn btn-primary"><i class="fa-regular fa-folder-open"></i> ver projetos</a>
+                    <a href="#contato" class="btn btn-outline"><i class="fa-regular fa-paper-plane"></i> entrar em contato</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- SEÇÃO TRAJETÓRIA PROFISSIONAL -->
+        <section id="trajetoria">
+            <div class="section-title">
+                <i class="fa-solid fa-briefcase"></i>
+                <span>trajetória profissional</span>
+            </div>
+            <div class="info-grid">
+                <!-- Coluna 1: Experiências atuais e recentes -->
+                <div class="info-item">
+                    <h3><i class="fa-solid fa-building"></i> Governo do Estado de Santa Catarina</h3>
+                    <ul>
+                        <li>
+                            <i class="fa-solid fa-chalkboard-user"></i>
+                            <div>
+                                <strong>Professor - Informação e Comunicação</strong> (Meio período)
+                                <span class="job-period">jan/2025 - momento · 1 ano 3 meses · Presencial, Blumenau</span>
+                                <div>CEDUP Blumenau - Eixo Informação e Comunicação, cursos técnicos.</div>
+                                <span class="competences"><i class="fa-regular fa-star"></i> Sistemas de informação computacionais · Metodologias ágeis</span>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-laptop"></i>
+                            <div>
+                                <strong>Professor Orientador de Laboratório de Informática</strong> (Meio período)
+                                <span class="job-period">fev/2024 - dez/2024 · 11 meses · CEDUP Hermann Hering, Blumenau</span>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-network-wired"></i>
+                            <div>
+                                <strong>Professor Orientador de Informática</strong> (Temporário)
+                                <span class="job-period">set/2009 - dez/2016 · 7 anos 4 meses · Blumenau</span>
+                                <div style="font-size: 0.9rem; margin-top: 0.3rem;">Orientação em tecnologias, segurança da informação, Linux Educacional, Windows Server, manutenção de hardware, mídias.</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Coluna 2: Outras experiências -->
+                <div class="info-item">
+                    <h3><i class="fa-solid fa-building"></i> Prefeitura Municipal de Indaial</h3>
+                    <ul>
+                        <li>
+                            <i class="fa-solid fa-computer"></i>
+                            <div>
+                                <strong>Professor de Informática Pedagógica</strong> (Tempo integral)
+                                <span class="job-period">mar/2018 - momento · 8 anos 1 mês · Indaial/SC</span>
+                            </div>
+                        </li>
+                    </ul>
+                    
+                    <h3 style="margin-top: 1.5rem;"><i class="fa-solid fa-building"></i> Secretaria de Estado da Educação - SC</h3>
+                    <ul>
+                        <li>
+                            <i class="fa-solid fa-desktop"></i>
+                            <div>
+                                <strong>Orientador de Laboratório - Informática</strong> (Meio período)
+                                <span class="job-period">fev/2023 - dez/2023 · 11 meses · Santa Catarina</span>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <h3 style="margin-top: 1.5rem;">📌 Resumo de atuação</h3>
+                    <div style="background: #f8fafc; padding: 1rem; border-radius: 1rem; margin-top: 0.5rem;">
+                        <p style="margin-bottom: 0.5rem;"><i class="fa-regular fa-circle-check" style="color: #2563eb;"></i> Orientação em tecnologias educacionais</p>
+                        <p style="margin-bottom: 0.5rem;"><i class="fa-regular fa-circle-check" style="color: #2563eb;"></i> Segurança da informação na internet</p>
+                        <p style="margin-bottom: 0.5rem;"><i class="fa-regular fa-circle-check" style="color: #2563eb;"></i> Linux Educacional e Windows Server</p>
+                        <p style="margin-bottom: 0.5rem;"><i class="fa-regular fa-circle-check" style="color: #2563eb;"></i> Manutenção de hardware e sistemas</p>
+                        <p><i class="fa-regular fa-circle-check" style="color: #2563eb;"></i> Produção audiovisual e mídias escolares</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO PROJETOS PEDAGÓGICOS E TÉCNICOS -->
+        <section id="projetos">
+            <div class="section-title">
+                <i class="fa-regular fa-star"></i>
+                <span>projetos desenvolvidos</span>
+            </div>
+            <div class="projects-grid">
+                <!-- Card 1 -->
+                <div class="project-card">
+                    <div class="project-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                    <h3>Segurança Digital na Escola</h3>
+                    <p>Projeto de conscientização sobre navegação segura, privacidade e combate a golpes virtuais para alunos do ensino médio.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Linux Educacional</span>
+                        <span class="tech-tag">Windows Server</span>
+                        <span class="tech-tag">Cibersegurança</span>
+                    </div>
+                    <a href="#" class="btn btn-outline"><i class="fa-regular fa-eye"></i> detalhes</a>
+                </div>
+                <!-- Card 2 -->
+                <div class="project-card">
+                    <div class="project-icon"><i class="fa-solid fa-server"></i></div>
+                    <h3>Rede Escolar Compartilhada</h3>
+                    <p>Implementação de pastas compartilhadas em rede e agendamento de uso dos laboratórios no CEDUP.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Windows Server</span>
+                        <span class="tech-tag">Redes</span>
+                        <span class="tech-tag">Active Directory</span>
+                    </div>
+                    <a href="#" class="btn btn-outline"><i class="fa-regular fa-eye"></i> detalhes</a>
+                </div>
+                <!-- Card 3 -->
+                <div class="project-card">
+                    <div class="project-icon"><i class="fa-solid fa-film"></i></div>
+                    <h3>Cine-Escola: Produção Audiovisual</h3>
+                    <p>Oficinas de filmagem, edição e criação de vídeos educativos com alunos, utilizando recursos multimídia da escola.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Edição de vídeo</span>
+                        <span class="tech-tag">Fotografia</span>
+                        <span class="tech-tag">Multimídia</span>
+                    </div>
+                    <a href="#" class="btn btn-outline"><i class="fa-regular fa-eye"></i> detalhes</a>
+                </div>
+                <!-- Card 4 -->
+                <div class="project-card">
+                    <div class="project-icon"><i class="fa-solid fa-robot"></i></div>
+                    <h3>Introdução à Programação com Metodologias Ágeis</h3>
+                    <p>Curso básico de lógica de programação utilizando SCRUM e Kanban como ferramentas pedagógicas.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">SCRUM</span>
+                        <span class="tech-tag">Kanban</span>
+                        <span class="tech-tag">Lógica</span>
+                    </div>
+                    <a href="#" class="btn btn-outline"><i class="fa-regular fa-eye"></i> detalhes</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO CONTATO -->
+        <section id="contato">
+            <div class="section-title">
+                <i class="fa-regular fa-envelope"></i>
+                <span>vamos conversar</span>
+            </div>
+            <div class="contact-form glass-card" style="background: rgba(255,255,255,0.7);">
+                <form action="#" method="post">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="nome">nome completo</label>
+                            <input type="text" id="nome" name="nome" class="form-control" placeholder="Seu nome" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">e-mail</label>
+                            <input type="email" id="email" name="email" class="form-control" placeholder="contato@dominio.com" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="assunto">assunto</label>
+                        <input type="text" id="assunto" name="assunto" class="form-control" placeholder="Ex: parceria em projeto educacional">
+                    </div>
+                    <div class="form-group">
+                        <label for="mensagem">mensagem</label>
+                        <textarea id="mensagem" name="mensagem" class="form-control" placeholder="Gostaria de conhecer mais sobre seu trabalho..."></textarea>
+                    </div>
+                    <div style="display: flex; justify-content: flex-end;">
+                        <button type="submit" class="btn-submit"><i class="fa-regular fa-paper-plane"></i> enviar mensagem</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer container">
+        <span>© 2026 Cassiano Kummer — educação & tecnologia</span>
+        <div class="social-links">
+            <a href="#" aria-label="github"><i class="fa-brands fa-github"></i></a>
+            <a href="#" aria-label="linkedin"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#" aria-label="lattes"><i class="fa-solid fa-graduation-cap"></i></a>
+        </div>
+    </footer>
+
+    <script>
+        (function() {
+            const form = document.querySelector('.contact-form form');
+            if (form) {
+                form.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    alert('Mensagem enviada! Em breve retornarei.');
+                    form.reset();
+                });
+            }
+        })();
+    </script>
+</body>
+</html>
