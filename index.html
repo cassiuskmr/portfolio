@@ -96,6 +96,7 @@
             height: 140px;
             border-radius: 50%;
             object-fit: cover;
+            object-position: center top;
             border: 4px solid white;
             box-shadow: 0 20px 30px -10px rgba(37, 99, 235, 0.2);
             transition: transform 0.3s ease;
@@ -273,7 +274,7 @@
 
         .project-card p {
             color: #475569;
-            margin: 0.5rem 0 1.5rem 0;
+            margin: 0.5rem 0 1rem 0;
             flex: 1;
         }
 
@@ -281,7 +282,7 @@
             display: flex;
             flex-wrap: wrap;
             gap: 0.5rem;
-            margin: 1rem 0 1.2rem;
+            margin: 0.5rem 0 0 0;
         }
 
         .tech-tag {
@@ -335,12 +336,6 @@
 
         .btn i {
             font-size: 1rem;
-        }
-
-        .project-card .btn {
-            margin-top: 0.8rem;
-            align-self: flex-start;
-            padding: 0.6rem 1.5rem;
         }
 
         .contact-form {
@@ -465,12 +460,14 @@
     </header>
 
     <main class="container">
-        <!-- HERO com foto -->
+        <!-- HERO com foto - SUBSTITUA PELO CAMINHO DA SUA FOTO -->
         <div class="hero">
-<img src="https://ui-avatars.com/api/?background=2563eb&color=fff&size=140&name=Cassiano+Kummer&bold=true&length=2&font-size=0.50&rounded=true" 
-     alt="Cassiano Kummer" 
-     class="profile-pic"
-     style="background: #e0f2fe;">
+            <!-- INSTRUÇÃO: Coloque sua foto na pasta assets/images/ com nome "cassiano.jpg" -->
+            <img src="assets/images/cassiano.jpg" 
+                 alt="Cassiano Kummer" 
+                 class="profile-pic"
+                 onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?background=2563eb&color=fff&size=140&name=Cassiano+Kummer&bold=true&length=2&font-size=0.50&rounded=true'">
+            
             <div class="hero-text">
                 <h1>Cassiano Kummer</h1>
                 <p>Professor efetivo estadual (Informação e Comunicação) · Professor efetivo municipal (Informática Pedagógica)</p>
@@ -517,6 +514,13 @@
                                 <div style="font-size: 0.9rem; margin-top: 0.3rem;">Orientação em tecnologias, segurança da informação, Linux Educacional, Windows Server, manutenção de hardware, mídias.</div>
                             </div>
                         </li>
+                        <li>
+                            <i class="fa-solid fa-desktop"></i>
+                            <div>
+                                <strong>Orientador de Laboratório - Informática</strong> (Meio período)
+                                <span class="job-period">fev/2023 - dez/2023 · 11 meses · Santa Catarina</span>
+                            </div>
+                        </li>
                     </ul>
                 </div>
                 
@@ -529,17 +533,6 @@
                             <div>
                                 <strong>Professor de Informática Pedagógica</strong> (Tempo integral)
                                 <span class="job-period">mar/2018 - momento · 8 anos 1 mês · Indaial/SC</span>
-                            </div>
-                        </li>
-                    </ul>
-                    
-                    <h3 style="margin-top: 1.5rem;"><i class="fa-solid fa-building"></i> Secretaria de Estado da Educação - SC</h3>
-                    <ul>
-                        <li>
-                            <i class="fa-solid fa-desktop"></i>
-                            <div>
-                                <strong>Orientador de Laboratório - Informática</strong> (Meio período)
-                                <span class="job-period">fev/2023 - dez/2023 · 11 meses · Santa Catarina</span>
                             </div>
                         </li>
                     </ul>
@@ -556,7 +549,7 @@
             </div>
         </section>
 
-        <!-- SEÇÃO PROJETOS PEDAGÓGICOS E TÉCNICOS -->
+        <!-- SEÇÃO PROJETOS PEDAGÓGICOS E TÉCNICOS - SEM BOTÕES DETALHES -->
         <section id="projetos">
             <div class="section-title">
                 <i class="fa-regular fa-star"></i>
@@ -573,7 +566,6 @@
                         <span class="tech-tag">Windows Server</span>
                         <span class="tech-tag">Cibersegurança</span>
                     </div>
-                    <a href="#" class="btn btn-outline"><i class="fa-regular fa-eye"></i> detalhes</a>
                 </div>
                 <!-- Card 2 -->
                 <div class="project-card">
@@ -585,7 +577,6 @@
                         <span class="tech-tag">Redes</span>
                         <span class="tech-tag">Active Directory</span>
                     </div>
-                    <a href="#" class="btn btn-outline"><i class="fa-regular fa-eye"></i> detalhes</a>
                 </div>
                 <!-- Card 3 -->
                 <div class="project-card">
@@ -597,7 +588,6 @@
                         <span class="tech-tag">Fotografia</span>
                         <span class="tech-tag">Multimídia</span>
                     </div>
-                    <a href="#" class="btn btn-outline"><i class="fa-regular fa-eye"></i> detalhes</a>
                 </div>
                 <!-- Card 4 -->
                 <div class="project-card">
@@ -609,7 +599,6 @@
                         <span class="tech-tag">Kanban</span>
                         <span class="tech-tag">Lógica</span>
                     </div>
-                    <a href="#" class="btn btn-outline"><i class="fa-regular fa-eye"></i> detalhes</a>
                 </div>
             </div>
         </section>
